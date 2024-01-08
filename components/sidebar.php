@@ -13,17 +13,23 @@
 
 <body>
 <div class="sidebar">
-    <div class="logo">
-        <a href="index.php">EcoHabrbor</a>
+    <div class="sidebar-content">
+        <div class="logo">
+            <a href="index.php">EcoHabrbor</a>
+        </div>
         <div class ="links">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
+            <ul>
+                <li><a href="#">Create Record</a></li>
+                <li><a href="#">Display Records</a></li>
+                <li><a href="#">Update Records</a></li>
+                <li><a href="#">Delete Records</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
         </div>
     </div>
-</div>
+
+    </div>
+
 
 
 </body>
