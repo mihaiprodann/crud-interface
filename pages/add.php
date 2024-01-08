@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php include_once "components/sidebar.php"; ?>
+<?php include_once "../components/sidebar.php"; ?>
 
 <h1>Add records to database</h1>
 
