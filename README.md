@@ -7,10 +7,7 @@ Welcome to the EcoHarbor Database repository! This project focuses on managing a
 - [Overview](#overview)
 - [Features](#features)
 - [Database Structure](#database-structure)
-- [Getting Started](#getting-started)
 - [CRUD Interface](#crud-interface)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
