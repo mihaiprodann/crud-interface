@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+}
+
+.sidebar{
+    width: 20%;
+    float: left;
+}
+
+.main-content{
+    width: 80%;
+    float: right;
+}

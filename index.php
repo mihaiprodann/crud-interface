@@ -6,10 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Website interface</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+
 </head>
 <body>
+<div class="container">
+    <div class="sidebar">
+        <?php include_once "components/sidebar.php"; ?>
+    </div>
+    <div class="main-content">
+        <h1>MUIE</h1>
+    </div>
 
-<?php include_once "components/sidebar.php"; ?>
+</div>
+
+
+
 
 </body>
 </html>
