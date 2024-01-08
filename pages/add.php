@@ -10,13 +10,17 @@
 <body>
 
 <?php include_once "../database/connection.php"; ?>
-<?php include_once "../components/sidebar.php"; ?>
+<div class="container">
+    <div class="sidebar">
+        <?php include_once "components/sidebar.php"; ?>
+    </div>
+    <div class="main-content">
+        <h1>Add records to database</h1>
 
-<h1>Add records to database</h1>
-
-<label for="tables">Choose table:</label>
-<select id="tables" name="tables">
-</select>
-
+        <label for="tables">Choose table:</label>
+        <select id="tables" name="tables">
+        </select>
+    </div>
+</div>
 </body>
 </html>

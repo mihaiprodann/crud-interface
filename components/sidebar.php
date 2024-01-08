@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sidebar</title>
 
-    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
 </head>
 
 

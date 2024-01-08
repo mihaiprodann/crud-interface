@@ -11,18 +11,13 @@
 
 </head>
 <body>
-<div class="container">
-    <div class="sidebar">
-        <?php include_once "components/sidebar.php"; ?>
+    <div class="container">
+        <div class="sidebar">
+            <?php include_once "components/sidebar.php"; ?>
+        </div>
+        <div class="main-content">
+            <h1>Lorem ipsum.</h1>
+        </div>
     </div>
-    <div class="main-content">
-        <h1>Lorem ipsum.</h1>
-    </div>
-
-</div>
-
-
-
-
 </body>
 </html>
