@@ -16,52 +16,47 @@
     </div>
     <div class="main-content">
         <h1>Add records to database</h1>
-        <label for="tables">Choose table:</label>
-        <select id="tables" name="tables">
-            <?php
-                $sql = "SHOW TABLES";
-                global $connection;
-                $result = mysqli_query($connection, $sql);
-                while ($row = mysqli_fetch_row($result)) {
-                    echo "<option value='$row[0]'";
 
-                    if(isset($_GET['table']) && $_GET['table'] == $row[0]) {
-                        echo "selected>";
-                    } else {
-                        echo ">";
-                    }
-                    echo $row[0]. "</option>";
-                }
-            ?>
-        </select>
+        <?php
+            include_once "../components/tables_select.php";
 
+            if (!isset($_GET['table'])):
+        ?>
+            <h3>Please select a table</h3>
+        <?php
+            else:
+        ?>
+        <br><br>
         <div id="form">
-            <?php
-                if(!isset($_GET['table'])):
-            ?>
-            <h3>No table selected</h3>
-            <?php
-                else:
-            ?>
             <form action="" method="post">
                 <?php
+                    global $connection;
                     $table = $_GET['table'];
                     $sql = "DESCRIBE $table";
                     $result = mysqli_query($connection, $sql);
                     while ($row = mysqli_fetch_row($result)) {
                         echo "<label for='$row[0]'>$row[0]</label>";
-                        echo "<input type='text' name='$row[0]' id='$row[0]'>";
+                        echo "<input type='text' name='$row[0]' id='$row[0]'/><br><br>";
                     }
                 ?>
                 <input type="submit" value="Add" name="submitBtn">
             </form>
             <?php
-                endif;
-
                 if(isset($_POST['submitBtn'])) {
+
+                    $table = $_GET['table'];
+                    $sql = "DESCRIBE $table";
+                    $result = mysqli_query($connection, $sql);
+                    while ($row = mysqli_fetch_row($result)) {
+                        if($_POST[$row[0]] == "") {
+                            echo "<h3>Please fill all fields</h3>";
+                            return;
+                        }
+                    }
+
                     $values = array_values($_POST);
                     $sql = "INSERT INTO $table VALUES(";
-                    for ($i = 0; $i < count($_POST) - 1; $i++) {
+                    for ($i = 0; $i < count($_POST); $i++) {
                         $sql .= "'".$values[$i]."',";
                     }
                     $sql = rtrim($sql, ",") . ")";
@@ -72,6 +67,7 @@
                         echo "<h3>Record not added</h3>";
                     }
                 }
+                endif;
             ?>
         </div>
     </div>
