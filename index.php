@@ -16,7 +16,7 @@
         <?php include_once "components/sidebar.php"; ?>
     </div>
     <div class="main-content">
-        <h1>MUIE</h1>
+        <h1>Lorem ipsum.</h1>
     </div>
 
 </div>
