@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sidebar</title>
 
-    <link rel="stylesheet" href="./styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
     <script src="https://kit.fontawesome.com/f5b71e78d1.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,7 +17,7 @@
        <header><i class="fa-solid fa-leaf" style="color: #00a3d7;"></i>EcoHarbor</header>
     <div class="content">
         <ul>
-            <li><a href="#"><i class="fa-solid fa-circle-plus"></i>Create Record</a></li>
+            <li><a href="pages/add.php"><i class="fa-solid fa-circle-plus"></i>Create Record</a></li>
             <li><a href="#"><i class="fa-solid fa-eye"></i>Display Records</a></li>
             <li><a href="#"><i class="fa-solid fa-pen-to-square"></i>Update Records</a></li>
             <li><a href="#"><i class="fa-solid fa-trash"></i>Delete Records</a></li>
