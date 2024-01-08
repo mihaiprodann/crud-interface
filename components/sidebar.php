@@ -7,28 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sidebar</title>
 
-    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="./styles/sidebar.css">
+    <script src="https://kit.fontawesome.com/f5b71e78d1.js" crossorigin="anonymous"></script>
 </head>
 
 
 <body>
 <div class="sidebar">
-    <div class="sidebar-content">
-        <div class="logo">
-            <a href="index.php">EcoHabrbor</a>
-        </div>
-        <div class ="links">
-            <ul>
-                <li><a href="#">Create Record</a></li>
-                <li><a href="#">Display Records</a></li>
-                <li><a href="#">Update Records</a></li>
-                <li><a href="#">Delete Records</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </div>
+       <header><i class="fa-solid fa-leaf" style="color: #00a3d7;"></i>EcoHarbor</header>
+    <div class="content">
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-circle-plus"></i>Create Record</a></li>
+            <li><a href="#"><i class="fa-solid fa-eye"></i>Display Records</a></li>
+            <li><a href="#"><i class="fa-solid fa-pen-to-square"></i>Update Records</a></li>
+            <li><a href="#"><i class="fa-solid fa-trash"></i>Delete Records</a></li>
+            <li><a href="#"><i class="fa-solid fa-address-card"></i>About</a></li>
+        </ul>
     </div>
+        </div>
 
-    </div>
+
+
 
 
 
