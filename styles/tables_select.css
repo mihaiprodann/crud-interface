@@ -1,0 +1,29 @@
+
+.custom-select{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.custom-select select {
+    width: 10vw;
+    border: 1px solid #00a3d7;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1rem;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.custom-select select:focus {
+    outline: none;
+}
+
+.custom-select option{
+    color: #00a3d7;
+    background-color: red;
+}
+

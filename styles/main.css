@@ -1,5 +1,4 @@
 
-
 .container{
     width: 100%;
 }
@@ -10,7 +9,22 @@
 }
 
 .main-content{
-    width: 70%;
+    width: 75%;
     float: right;
     padding-top: 50px;
 }
+
+.main-content h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+

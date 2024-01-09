@@ -16,9 +16,9 @@
     </div>
     <div class="main-content">
         <h1>Add records to database</h1>
-
         <?php
             include_once "../components/tables_select.php";
+
 
             if (!isset($_GET['table'])):
         ?>
