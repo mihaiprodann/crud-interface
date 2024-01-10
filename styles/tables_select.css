@@ -1,21 +1,20 @@
 
 .custom-select{
     width: 100%;
-    margin-bottom: 20px;
     margin-left: 10px;
 }
 
 .custom-select select {
-    width: 10vw;
     border: 1px solid #00a3d7;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-top: 30px;
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding-left: 10px;
     margin-left: 10px;
+
 }
 
 .custom-select select:focus {
@@ -28,5 +27,13 @@
     font-style: italic;
     font-size: 1rem;
     color: #00a3d7;
+}
+
+.custom-select label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.85);
 }
 

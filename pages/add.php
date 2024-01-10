@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add records to database</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/add.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -15,7 +18,7 @@
         <?php include_once "../components/sidebar.php"; ?>
     </div>
     <div class="main-content">
-        <h1>Add records to database</h1>
+        <h1><i class="fa-regular fa-plus"></i>Add records to database</h1>
         <?php
             include_once "../components/tables_select.php";
 
@@ -29,6 +32,7 @@
         <br><br>
         <div id="form">
             <form action="" method="post">
+                <div class="label-container">
                 <?php
                     global $connection;
                     $table = $_GET['table'];
@@ -39,7 +43,8 @@
                         echo "<input type='text' name='$row[0]' id='$row[0]'/><br><br>";
                     }
                 ?>
-                <input type="submit" value="Add" name="submitBtn">
+                        <input class="button" type="submit" value="Add" name="submitBtn">
+                </div>
             </form>
             <?php
                 if(isset($_POST['submitBtn'])) {

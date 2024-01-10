@@ -3,6 +3,7 @@
     <div class="custom-select">
     <label for="tables">Choose table:</label>
     <select id="tables" name="tables">
+        <option value="" disabled selected>Select table</option>
         <?php
         $sql = "SHOW TABLES";
         global $connection;

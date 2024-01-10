@@ -12,13 +12,21 @@
     width: 75%;
     float: right;
     padding-top: 50px;
+    padding-right: 40px;
 }
 
 .main-content h1{
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 2.5rem;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
     margin-bottom: 20px;
+    margin-left: 10px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.main-content i{
+    color: #00a3d7;
+    margin-right: 15px;
 }
