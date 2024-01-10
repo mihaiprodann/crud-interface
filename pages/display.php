@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>See records from database</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/tables.css">
+    <script src="scripts/add.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -26,9 +30,11 @@
         <?php
         else:
         ?>
-        <br><br>
         <div id="table">
             <table>
+                <tr class="c1">
+                    <th colspan="100%">Table: <?php echo $_GET['table']; ?></th>
+                </tr>
                 <tr>
                     <?php
                     global $connection;
