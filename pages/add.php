@@ -68,7 +68,7 @@
                     try {
                         $result = mysqli_query($connection, $sql);
                     } catch (Exception $e) {
-                        echo "<h3>Record not added</h3>" . $e->getMessage() . "<br>" . $sql;
+                        echo "<h3>Record not added. Please be careful to enter the correct data types for columns.</h3>";
                         return;
                     }
                     if($result) {
