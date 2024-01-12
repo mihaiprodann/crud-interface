@@ -61,11 +61,16 @@
 
                     $values = array_values($_POST);
                     $sql = "INSERT INTO $table VALUES(";
-                    for ($i = 0; $i < count($_POST); $i++) {
+                    for ($i = 0; $i < count($_POST) - 1; $i++) {
                         $sql .= "'".$values[$i]."',";
                     }
                     $sql = rtrim($sql, ",") . ")";
-                    $result = mysqli_query($connection, $sql);
+                    try {
+                        $result = mysqli_query($connection, $sql);
+                    } catch (Exception $e) {
+                        echo "<h3>Record not added</h3>" . $e->getMessage() . "<br>" . $sql;
+                        return;
+                    }
                     if($result) {
                         echo "<h3>Record added successfully</h3>";
                     } else {
