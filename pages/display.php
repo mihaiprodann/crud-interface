@@ -19,7 +19,7 @@
         <?php include_once "../components/sidebar.php"; ?>
     </div>
     <div class="main-content">
-        <h1>See records from database</h1>
+        <h1><i class="fa-solid fa-eye"></i>See records from database</h1>
 
         <?php
         include_once "../components/tables_select.php";
@@ -33,7 +33,7 @@
         <div id="table">
             <table>
                 <tr class="c1">
-                    <th colspan="100%">Table: <?php echo $_GET['table']; ?></th>
+                    <th colspan="100%">Table: <?php echo $_GET['table']; ?> <a class="addBtn" href="" id="create_link">Add a record</a></th>
                 </tr>
                 <tr>
                     <?php

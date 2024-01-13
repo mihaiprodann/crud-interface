@@ -18,7 +18,7 @@
         <?php include_once "../components/sidebar.php"; ?>
     </div>
     <div class="main-content">
-        <h1><i class="fa-regular fa-plus"></i>Add records to database</h1>
+        <h1><i class="fa-solid fa-circle-plus"></i>Add records to database</h1>
         <?php
             include_once "../components/tables_select.php";
 
