@@ -33,7 +33,7 @@
         <div id="table">
             <table>
                 <tr class="c1">
-                    <th colspan="100%">Table: <?php echo $_GET['table']; ?> <a class="addBtn" href="" id="create_link">Add a record</a></th>
+                    <th colspan="100%">Table: <?php echo $_GET['table']; ?> <a class="addBtn" href="add.php?table=<?php echo $_GET['table']?>" id="create_link">Add a record</a></th>
                 </tr>
                 <tr>
                     <?php
