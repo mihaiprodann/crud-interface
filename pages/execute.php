@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/tables.css">
     <link rel="stylesheet" href="../styles/execute.css">
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -24,7 +25,7 @@
             <label>
                 <input type="text" name="query"/>
             </label>
-            <input type="submit" value="Execute" name="execute">
+            <input class="btn" type="submit" value="Execute" name="execute">
         </form>
             <?php
             if (isset($_POST['execute'])) {
