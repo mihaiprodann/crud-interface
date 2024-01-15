@@ -30,12 +30,26 @@
             if (isset($_POST['execute'])) {
                 global $connection;
                 $query = $_POST['query'];
-                // if the first word is SELECT, show the result in a table
-                if (strtoupper(substr($query, 0, 6)) == "SELECT") {
-                    try {
-                        $result = mysqli_query($connection, $query);
-                        echo "<div id='table'>";
+                // if the query returns a table, display it
+                try {
+                    $result = mysqli_query($connection, $query);
+                    if (gettype($result) == "boolean") {
+                        echo "<h3 class='success'>Query executed successfully</h3>";
+                    } else {
                         echo "<table>";
+
+                        // if it's a select query, display the table header
+                        if (strpos($query, "SELECT") !== false) {
+                            $table = explode(" ", $query)[3];
+                            $sql2 = "DESCRIBE $table";
+                            $result2 = mysqli_query($connection, $sql2);
+                            echo "<tr>";
+                            while ($row2 = mysqli_fetch_row($result2)) {
+                                echo "<th>$row2[0]</th>";
+                            }
+                            echo "</tr>";
+                        }
+
                         while ($row = mysqli_fetch_row($result)) {
                             echo "<tr>";
                             for ($i = 0; $i < count($row); $i++) {
@@ -44,18 +58,9 @@
                             echo "</tr>";
                         }
                         echo "</table>";
-                        echo "</div>";
-                    } catch (Exception $e) {
-                        echo "<div class='error'>Error executing query: " . $e->getMessage() . "</div>";
                     }
-                } else {
-                    // if the first word is not SELECT, execute the query
-                    $result = mysqli_query($connection, $query);
-                    if ($result) {
-                        echo "<div class='success'>Query executed successfully</div>";
-                    } else {
-                        echo "<div class='error'>Error executing query</div>";
-                    }
+                } catch (Exception $e) {
+                    echo "<h3>Query failed</h3>";
                 }
             }
 
