@@ -38,11 +38,15 @@
                 <tr>
                     <?php
                     global $connection;
+                    $column = "";
                     $table = $_GET['table'];
                     $sql = "DESCRIBE $table";
                     $result = mysqli_query($connection, $sql);
                     while ($row = mysqli_fetch_row($result)) {
                         echo "<th>$row[0]</th>";
+                        if ($column == "") {
+                            $column = $row[0];
+                        }
                     }
                     echo "<th>Actions</th>"
                     ?>
@@ -55,12 +59,61 @@
                     for ($i = 0; $i < count($row); $i++) {
                         echo "<td>$row[$i]</td>";
                     }
-                    echo "<td><a href='update.php?table=$table&id=$row[0]'>Edit</a>";
+                    echo "<td><a href='update.php?table=$table&id=$row[0]&column=$column'>Edit</a>";
                     echo "</tr>";
                 }
                 ?>
             </table>
             <?php
+            endif;
+
+            if (isset($_GET['id'])):
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM $table WHERE $column=$id";
+                $result = mysqli_query($connection, $sql);
+                $row = mysqli_fetch_row($result);
+
+                // get the column names
+                $sql2 = "DESCRIBE $table";
+                $columns = [];
+                $result2 = mysqli_query($connection, $sql2);
+                while ($row2 = mysqli_fetch_row($result2)) {
+                    $columns[] = $row2[0];
+                }
+                ?>
+                <form action="" method="post">
+                    <?php
+                    for ($i = 0; $i < count($row); $i++) {
+                        echo "<label for='$columns[$i]'>$columns[$i]</label>";
+                        echo "<input type='text' name='$columns[$i]' id='$columns[$i]' value='$row[$i]'>";
+                    }
+                    ?>
+                    <input type="submit" value="Update" name="Update">
+                </form>
+            <?php
+            endif;
+
+            if (isset($_POST['Update'])):
+                $sql = "UPDATE $table SET ";
+                for ($i = 0; $i < count($columns); $i++) {
+                    $value = $_POST[$columns[$i]];
+                    $sql .= "$columns[$i] = '$value'";
+                    if ($i != count($columns) - 1) {
+                        $sql .= ", ";
+                    }
+                }
+                $sql .= " WHERE $column = $id";
+                $result = mysqli_query($connection, $sql);
+                try {
+                    $result = mysqli_query($connection, $sql);
+                    if ($result) {
+                        echo "Record updated successfully. See the table <a href='display.php?table=$table'>here</a>";
+                    } else {
+                        echo "Error updating record: " . mysqli_error($connection);
+                    }
+                } catch (Exception $e) {
+                    echo "<h3> An error occured: " . $e->getMessage() . "</h3>";
+                }
 
             endif;
             ?>
