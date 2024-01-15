@@ -20,7 +20,32 @@
             <?php include_once "components/sidebar.php"; ?>
         </div>
         <div class="main-content">
-            <h1>Lorem ipsum.</h1>
+
+            <h1><i class="fas fa-leaf"></i>EcoHarbor Database</h1>
+            <p>Your Gateway to Ecological Knowledge</p>
+
+            <h2>Explore and Contribute to the EcoHarbor Database</h2>
+
+            <p>Welcome to EcoHarbor, where we strive to create a centralized hub for ecological information, fostering collaboration, research, and environmental awareness. Our database is designed to be a comprehensive repository for ecological data, educational resources, and research collaborations.</p>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-database fa-3x"></i>
+                    <h3>Centralized Storage</h3>
+                    <p>Store and access a vast amount of ecological information in one place.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-globe fa-3x"></i>
+                    <h3>Promote Sustainability</h3>
+                    <p>Contribute to sustainability and conservation efforts through your data.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Collaborate with Others</h3>
+                    <p>Connect with researchers and enthusiasts to collaborate on ecological projects.</p>
+                </div>
+            </div>
+            <p>Curious to know more about us? Check out the <a class="about-link" href="">About Us</a> section!</p>
         </div>
     </div>
 </body>

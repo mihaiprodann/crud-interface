@@ -37,6 +37,7 @@
         let display_link = document.getElementById('display_link');
         let update_link = document.getElementById('update_link');
         let delete_link = document.getElementById('delete_link');
+        let about_link = document.getElementById('about_link');
         let logo_link = document.getElementById('logo_link');
 
         if (url.includes('pages')) {
@@ -44,12 +45,14 @@
             display_link.href = 'display.php';
             update_link.href = 'update.php';
             delete_link.href = 'delete.php';
+            about_link.href = 'about.php';
             logo_link.href = '../index.php';
         } else {
             create_link.href = 'pages/add.php';
             display_link.href = 'pages/display.php';
             update_link.href = 'pages/update.php';
             delete_link.href = 'pages/delete.php';
+            about_link.href = 'pages/about.php';
             logo_link.href = 'index.php';
         }
     }, false);

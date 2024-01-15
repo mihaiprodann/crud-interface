@@ -35,5 +35,21 @@
     text-align: center;
     color: crimson;
     margin-top: 20px;
+}
 
+.main-content p{
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main-content .features{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.main-content .feature{
+    width: 30%;
+    text-align: center;
 }
