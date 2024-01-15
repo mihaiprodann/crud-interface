@@ -53,3 +53,9 @@
     width: 30%;
     text-align: center;
 }
+
+.about-link{
+    text-decoration: none;
+    color: #00a3d7;
+    font-weight: 600;
+}

@@ -45,7 +45,9 @@
                     <p>Connect with researchers and enthusiasts to collaborate on ecological projects.</p>
                 </div>
             </div>
-            <p>Curious to know more about us? Check out the <a class="about-link" href="">About Us</a> section!</p>
+            <div class="aboutText">
+            <p>Curious to know more about us? Check out the <a class="about-link" id="about_link" href="">About Us</a> section!</p>
+                </div>
         </div>
     </div>
 </body>

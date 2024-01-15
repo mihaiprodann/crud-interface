@@ -7,6 +7,7 @@
     <title>See records from database</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/tables.css">
+    <link rel="stylesheet" href="../styles/update.css">
     <script src="scripts/add.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -59,7 +60,7 @@
                     for ($i = 0; $i < count($row); $i++) {
                         echo "<td>$row[$i]</td>";
                     }
-                    echo "<td><a href='update.php?table=$table&id=$row[0]&column=$column'>Edit</a>";
+                    echo "<td><a class='edit' href='update.php?table=$table&id=$row[0]&column=$column'>Edit</a>";
                     echo "</tr>";
                 }
                 ?>
@@ -81,6 +82,7 @@
                     $columns[] = $row2[0];
                 }
                 ?>
+            <div class="input-container">
                 <form action="" method="post">
                     <?php
                     for ($i = 0; $i < count($row); $i++) {
@@ -88,8 +90,10 @@
                         echo "<input type='text' name='$columns[$i]' id='$columns[$i]' value='$row[$i]'>";
                     }
                     ?>
-                    <input type="submit" value="Update" name="Update">
+                    <br>
+                    <input class="updateButton" type="submit" value="Update" name="Update">
                 </form>
+        </div>
             <?php
             endif;
 
@@ -103,18 +107,25 @@
                     }
                 }
                 $sql .= " WHERE $column = $id";
-                $result = mysqli_query($connection, $sql);
+                echo "<div class='messages'>";
                 try {
                     $result = mysqli_query($connection, $sql);
                     if ($result) {
-                        echo "Record updated successfully. See the table <a href='display.php?table=$table'>here</a>";
+
+                        echo"<div class='success'>";
+                        echo "Record updated successfully. See the table <a href='display.php?table=$table'>here</a>.";
+                        echo"</div>";
                     } else {
+                        echo"<div class='error'>";
                         echo "Error updating record: " . mysqli_error($connection);
+                        echo"</div>";
                     }
                 } catch (Exception $e) {
-                    echo "<h3> An error occured: " . $e->getMessage() . "</h3>";
+                    echo"<div class='error'>";
+                    echo " An error occured: " . $e->getMessage();
+                    echo"</div>";
                 }
-
+                echo"</div>";
             endif;
             ?>
         </div>
