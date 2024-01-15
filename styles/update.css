@@ -78,3 +78,9 @@ form{
     color: #721c24;
     font-weight: 600;
 }
+
+.edit{
+    text-decoration: none;
+    color: #00a3d7;
+    font-weight: 600;
+}

@@ -60,7 +60,7 @@
                     for ($i = 0; $i < count($row); $i++) {
                         echo "<td>$row[$i]</td>";
                     }
-                    echo "<td><a class='edit' href='update.php?table=$table&id=$row[0]&column=$column'>Edit</a>";
+                    echo "<td><a class='edit' href='update.php?table=$table&id=$row[0]&column=$column'><i class='fa-solid fa-pen-to-square'></i>Edit</a>";
                     echo "</tr>";
                 }
                 ?>

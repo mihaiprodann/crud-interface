@@ -7,6 +7,7 @@
     <title>See records from database</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/tables.css">
+    <link rel="stylesheet" href="../styles/execute.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -25,41 +26,45 @@
             </label>
             <input type="submit" value="Execute" name="execute">
         </form>
-    </div>
-    <?php
-        if (isset($_POST['execute'])) {
-            global $connection;
-            $query = $_POST['query'];
-            // if the first word is SELECT, show the result in a table
-            if (strtoupper(substr($query, 0, 6)) == "SELECT") {
-                try {
-                    $result = mysqli_query($connection, $query);
-                    echo "<div id='table'>";
-                    echo "<table>";
-                    while ($row = mysqli_fetch_row($result)) {
-                        echo "<tr>";
-                        for ($i = 0; $i < count($row); $i++) {
-                            echo "<td>$row[$i]</td>";
+            <?php
+            if (isset($_POST['execute'])) {
+                global $connection;
+                $query = $_POST['query'];
+                // if the first word is SELECT, show the result in a table
+                if (strtoupper(substr($query, 0, 6)) == "SELECT") {
+                    try {
+                        $result = mysqli_query($connection, $query);
+                        echo "<div id='table'>";
+                        echo "<table>";
+                        while ($row = mysqli_fetch_row($result)) {
+                            echo "<tr>";
+                            for ($i = 0; $i < count($row); $i++) {
+                                echo "<td>$row[$i]</td>";
+                            }
+                            echo "</tr>";
                         }
-                        echo "</tr>";
+                        echo "</table>";
+                        echo "</div>";
+                    } catch (Exception $e) {
+                        echo "<div class='error'>Error executing query: " . $e->getMessage() . "</div>";
                     }
-                    echo "</table>";
-                    echo "</div>";
-                } catch (Exception $e) {
-                    echo "<div class='error'>Error executing query: " . $e->getMessage() . "</div>";
-                }
-            } else {
-                // if the first word is not SELECT, execute the query
-                $result = mysqli_query($connection, $query);
-                if ($result) {
-                    echo "<div class='success'>Query executed successfully</div>";
                 } else {
-                    echo "<div class='error'>Error executing query</div>";
+                    // if the first word is not SELECT, execute the query
+                    $result = mysqli_query($connection, $query);
+                    if ($result) {
+                        echo "<div class='success'>Query executed successfully</div>";
+                    } else {
+                        echo "<div class='error'>Error executing query</div>";
+                    }
                 }
             }
-        }
 
-    ?>
+            ?>
+
+
+
+    </div>
+
 </div>
 </body>
 </html>
