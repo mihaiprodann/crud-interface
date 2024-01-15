@@ -19,7 +19,7 @@
         <?php include_once "../components/sidebar.php"; ?>
     </div>
     <div class="main-content">
-        <h1><i class="fa-solid fa-eye"></i>See records from database</h1>
+        <h1><i class="fa-solid fa-eye"></i>Updates records from database</h1>
 
         <?php
         include_once "../components/tables_select.php";
