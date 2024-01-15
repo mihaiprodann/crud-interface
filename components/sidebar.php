@@ -25,7 +25,7 @@
             <li><a href="" id="display_link"><i class="fa-solid fa-eye"></i>Display Records</a></li>
             <li><a href="" id="update_link"><i class="fa-solid fa-pen-to-square"></i>Update Records</a></li>
             <li><a href="" id="delete_link"><i class="fa-solid fa-trash"></i>Delete Records</a></li>
-            <li><a href="" id="execute_link"><i class="fa-solid fa-person-running"></i>Execute Querry</a></li>
+            <li><a href="" id="execute_link"><i class="fa-solid fa-person-running"></i>Execute Query</a></li>
             <li><a href="" id="about_link"><i class="fa-solid fa-address-card"></i>About</a></li>
         </ul>
     </div>
@@ -39,6 +39,7 @@
         let delete_link = document.getElementById('delete_link');
         let about_link = document.getElementById('about_link');
         let logo_link = document.getElementById('logo_link');
+        let execute_link = document.getElementById('execute_link');
 
         if (url.includes('pages')) {
             create_link.href = 'add.php';
@@ -47,6 +48,7 @@
             delete_link.href = 'delete.php';
             about_link.href = 'about.php';
             logo_link.href = '../index.php';
+            execute_link.href = 'execute.php';
         } else {
             create_link.href = 'pages/add.php';
             display_link.href = 'pages/display.php';
@@ -54,6 +56,7 @@
             delete_link.href = 'pages/delete.php';
             about_link.href = 'pages/about.php';
             logo_link.href = 'index.php';
+            execute_link.href = 'pages/execute.php';
         }
     }, false);
 </script>
